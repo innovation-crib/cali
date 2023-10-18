@@ -62,10 +62,7 @@ export class BookingService {
         this.state.update((state) => ({ ...state, selectedEnd: date }));
     }
 
-    createBooking() {
-        
-
-
+    createBooking() {}
 }
 
 type Booking = {
