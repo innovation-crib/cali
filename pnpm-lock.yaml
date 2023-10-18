@@ -35,6 +35,9 @@ dependencies:
   '@nx/angular':
     specifier: 16.10.0
     version: 16.10.0(@angular-devkit/build-angular@16.2.6)(@angular-devkit/core@16.2.6)(@angular-devkit/schematics@16.2.6)(@schematics/angular@16.2.6)(@types/node@16.11.7)(eslint@8.46.0)(nx@16.10.0)(rxjs@7.8.1)(ts-node@10.9.1)(typescript@5.1.6)
+  moment:
+    specifier: ^2.29.4
+    version: 2.29.4
   rxjs:
     specifier: ~7.8.0
     version: 7.8.1
@@ -9113,6 +9116,10 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dev: true
+
+  /moment@2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
+    dev: false
 
   /mrmime@1.0.1:
     resolution: {integrity: sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw==}

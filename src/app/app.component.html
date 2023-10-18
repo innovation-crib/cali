@@ -1,1 +1,14 @@
+<ng-container *ngIf="!signedIn(); else signedInTemplate">
+    not signed in
+
+    <button (click)="signIn()">Sign In</button>
+</ng-container>
+
+<ng-template #signedInTemplate>
+    <p>signed in</p>
+    <button (click)="signOut()">Sign Out</button>
+</ng-template>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
 <app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
