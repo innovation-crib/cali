@@ -1,0 +1,76 @@
+<div class="m-5 p-2 rounded-xl bg-slate-400">
+    <div class="grid grid-cols-7">
+        <div class="bg-gray-500">Mon</div>
+        <div class="bg-gray-500">Tue</div>
+        <div class="bg-gray-500">Wed</div>
+        <div class="bg-gray-500">Thu</div>
+        <div class="bg-gray-500">Fri</div>
+        <div class="bg-gray-500">Sat</div>
+        <div class="bg-gray-500">Sun</div>
+    </div>
+    <div *ngFor="let week of monthOverview()" class="grid grid-cols-7">
+        <div
+            [ngClass]="{
+                'bg-gray-500': !week.monday.inMonth,
+                'bg-purple-500': week.monday.booked,
+                'bg-blue-500': week.monday.selected
+            }"
+        >
+            {{ week.monday.date.toDate() | date : 'dd/MM' }}
+        </div>
+        <div
+            [ngClass]="{
+                'bg-gray-500': !week.tuesday.inMonth,
+                'bg-purple-500': week.tuesday.booked,
+                'bg-blue-500': week.tuesday.selected
+            }"
+        >
+            {{ week.tuesday.date.toDate() | date : 'dd/MM' }}
+        </div>
+        <div
+            [ngClass]="{
+                'bg-gray-500': !week.wednesday.inMonth,
+                'bg-purple-500': week.wednesday.booked,
+                'bg-blue-500': week.wednesday.selected
+            }"
+        >
+            {{ week.wednesday.date.toDate() | date : 'dd/MM' }}
+        </div>
+        <div
+            [ngClass]="{
+                'bg-gray-500': !week.thursday.inMonth,
+                'bg-purple-500': week.thursday.booked,
+                'bg-blue-500': week.thursday.selected
+            }"
+        >
+            {{ week.thursday.date.toDate() | date : 'dd/MM' }}
+        </div>
+        <div
+            [ngClass]="{
+                'bg-gray-500': !week.friday.inMonth,
+                'bg-purple-500': week.friday.booked,
+                'bg-blue-500': week.friday.selected
+            }"
+        >
+            {{ week.friday.date.toDate() | date : 'dd/MM' }}
+        </div>
+        <div
+            [ngClass]="{
+                'bg-gray-500': !week.saturday.inMonth,
+                'bg-purple-500': week.saturday.booked,
+                'bg-blue-500': week.saturday.selected
+            }"
+        >
+            {{ week.saturday.date.toDate() | date : 'dd/MM' }}
+        </div>
+        <div
+            [ngClass]="{
+                'bg-gray-500': !week.sunday.inMonth,
+                'bg-purple-500': week.sunday.booked,
+                'bg-blue-500': week.sunday.selected
+            }"
+        >
+            {{ week.sunday.date.toDate() | date : 'dd/MM' }}
+        </div>
+    </div>
+</div>
