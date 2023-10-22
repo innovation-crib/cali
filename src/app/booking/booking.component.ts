@@ -6,11 +6,12 @@ import {
     inject,
 } from '@angular/core';
 import { BookingService } from './booking.service';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @Component({
     standalone: true,
     selector: 'app-booking',
-    imports: [CommonModule],
+    imports: [CommonModule, CalendarComponent],
     templateUrl: './booking.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })

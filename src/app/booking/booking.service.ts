@@ -1,5 +1,4 @@
 import { Injectable, computed, effect, inject, signal } from '@angular/core';
-import { Moment } from 'moment';
 import * as moment from 'moment';
 import {
     CollectionReference,
@@ -25,8 +24,8 @@ export class BookingService {
         BOOKINGS_PATH
     ) as CollectionReference<BookingModel>;
 
-    readonly selectedStart = signal<Moment>(moment().add(1, 'days'));
-    readonly selectedEnd = signal<Moment>(moment().add(5, 'days'));
+    readonly selectedStart = signal<moment.Moment>(moment().add(1, 'days'));
+    readonly selectedEnd = signal<moment.Moment>(moment().add(5, 'days'));
     readonly shownMonth = signal<Month>({
         number: moment().month() as MonthNumber,
         year: moment().year(),
@@ -108,7 +107,7 @@ export class BookingService {
         return months;
     });
 
-    isDayBooked(date: Moment) {
+    isDayBooked(date: moment.Moment) {
         const bookings = this.bookings();
         return bookings.some((booking) => {
             const start = booking.start;
@@ -117,18 +116,18 @@ export class BookingService {
         });
     }
 
-    isDaySelected(date: Moment) {
+    isDaySelected(date: moment.Moment) {
         const start = this.selectedStart();
         const end = this.selectedEnd();
         if (!start || !end) return false;
         return date.isBetween(start, end, 'day', '[]');
     }
 
-    isDayToday(date: Moment) {
+    isDayToday(date: moment.Moment) {
         return date.isSame(moment(), 'day');
     }
 
-    generateDayOverview(date: Moment): DayOverview {
+    generateDayOverview(date: moment.Moment): DayOverview {
         return {
             date,
             booked: this.isDayBooked(date),
@@ -252,12 +251,12 @@ export class BookingService {
         this.state.update((state) => ({ ...state, sellectedBooking: id }));
     }
 
-    selectStart(date: Moment) {
+    selectStart(date: moment.Moment) {
         date = moment(date).startOf('day').zone('utc');
         this.selectedStart.update(() => date);
     }
 
-    selectEnd(date: Moment) {
+    selectEnd(date: moment.Moment) {
         date = moment(date).endOf('day').zone('utc');
         this.selectedEnd.update(() => date);
     }
@@ -267,8 +266,8 @@ export class BookingService {
 
 type Booking = {
     id: string;
-    start: Moment;
-    end: Moment;
+    start: moment.Moment;
+    end: moment.Moment;
     userId: string;
 };
 

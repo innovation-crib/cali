@@ -1,0 +1,11 @@
+<p>month : {{ month }}</p>
+
+<div class="bg-gray-500 grid grid-cols-7 gap-2">
+    <div
+        *ngFor="let date of days()"
+        class="text-center"
+        [ngClass]="{ 'bg-slate-300': !date.isCurrentMonth }"
+    >
+        {{ date.date | date }}
+    </div>
+</div>
